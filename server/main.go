@@ -30,8 +30,7 @@ func main() {
 	e.HideBanner = true
 	e.GET("/", handlerGet)
 	e.POST("/", handlerPost)
-	e.DELETE("/", handlerDelete)
-	e.DELETE("/:name/", handlerDelete)
+	e.DELETE("/:name", handlerDelete)
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins: []string{"*"},

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base de Clientes</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="container">
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".centered-modal">
+                Buscar</button>
+        </div>
+        <div class="modal fade centered-modal" tabindex="-1" role="dialog" aria-labelledby="centeredModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastro de Clientes</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form name="form">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputName">Nome</label>
+                                    <input type="text" class="form-control" id="inputName" placeholder="Joe Doe">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputCPF">CPF</label>
+                                    <input type="text" class="form-control" id="inputCPF" placeholder="012.345.678-90">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-8">
+                                    <label for="inputAddress">Endereço</label>
+                                    <input type="text" class="form-control" id="inputAddress"
+                                        placeholder="Estrada de Itapecerica">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputNumber" class="form-label">Número</label>
+                                    <input type="text" class="form-control" id="inputNumber" placeholder="1234">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-floating col-md-6">
+                                    <label for="floatingSelect">Estado</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected disabled hidden>Escolha...</option>
+                                        <option>Minas Gerais</option>
+                                        <option>Rio de Janeiro</option>
+                                        <option>Santa Catarina</option>
+                                        <option>São Paulo</option>
+                                    </select>
+                                </div>
+                                <div class="form-floating col-md-6">
+                                    <label for="inputCity" class="form-label">Cidade</label>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="São Paulo">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary">Salvar <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z" />
+                                <path
+                                    d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z" />
+                                <path
+                                    d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z" />
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive-md">
+
+            <table class="table table-borderless table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">CPF</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".centered-modal">Cadastrar
+                Cliente</button>
+        </div>
+    </footer>
+</body>
+
+</html>

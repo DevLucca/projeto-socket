@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Base de Clientes</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
@@ -26,9 +26,9 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Nome</span>
             </div>
-            <input type="text" class="form-control" aria-label="Sizing example input"
+            <input id="input-search" type="text" class="form-control" aria-label="Sizing example input"
                 aria-describedby="inputGroup-sizing-default">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".centered-modal">
+            <button type="button" class="btn btn-primary" id="btn-search">
                 Buscar</button>
         </div>
         <div class="modal fade centered-modal" tabindex="-1" role="dialog" aria-labelledby="centeredModal"
@@ -85,7 +85,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Salvar <svg xmlns="http://www.w3.org/2000/svg"
+                        <button type="submit" class="btn btn-primary submit">Salvar <svg xmlns="http://www.w3.org/2000/svg"
                                 width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
                                 <path
                                     d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z" />
@@ -100,7 +100,7 @@
         </div>
         <div class="table-responsive-md">
 
-            <table class="table table-borderless table-hover">
+            <table class="table table-borderless table-hover" id="client-table">
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
@@ -110,12 +110,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
@@ -128,6 +122,12 @@
                 Cliente</button>
         </div>
     </footer>
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
